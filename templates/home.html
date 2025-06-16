@@ -1,0 +1,23 @@
+ {% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="text-center mt-5">
+  {% if user.is_authenticated %}
+    <h1>Hello, {{ user.first_name }} 👋</h1>
+    <p>Welcome back to your dashboard!</p>
+    
+    <div class="mt-4">
+        <h4>Your Details:</h4>
+        <p><strong>Username:</strong> {{ user.username }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>First Name:</strong> {{ user.first_name }}</p>
+        <p><strong>Last Name:</strong> {{ user.last_name }}</p>
+    </div>
+    <a href="{% url 'signout' %}" class="btn btn-outline-danger mt-3">Logout</a>
+  {% else %}
+    <h1>Everyone Welcome to this MySite!</h1>
+    <p>Please <a href="{% url 'signin' %}">Login</a> or <a href="{% url 'signup' %}">Register</a> to continue.</p>
+  {% endif %}
+</div>
+{% endblock %}

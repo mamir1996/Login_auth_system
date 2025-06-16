@@ -5,7 +5,7 @@ from .forms import SignupForm, SigninForm
 from django.contrib.auth.models import User
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'auth_app/home.html')
 
 def signup(request):
     if request.method == 'POST':
@@ -28,7 +28,7 @@ def signup(request):
             
     else:
         form = SignupForm()
-    return render(request, 'signup.html', {'form': form})
+    return render(request, 'auth_app/signup.html', {'form': form})
 
 
 def signin(request):
@@ -43,7 +43,7 @@ def signin(request):
             messages.error(request, "Please correct the error below.")
     else:
         form = SigninForm()
-    return render(request, 'signin.html', {'form': form})
+    return render(request, 'auth_app/signin.html', {'form': form})
 
 def signout(request):
     logout(request)

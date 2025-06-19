@@ -23,5 +23,5 @@ A professional Django project with user registration, login, logout, and profile
 ### 1. Clone the repository:
 
 ```bash
-git https://github.com/mamir1996/Login_auth_system
+git clone https://github.com/mamir1996/Login_auth_system
 cd Login_auth_system
